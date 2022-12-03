@@ -15,7 +15,7 @@
 
 <h1 align="center">Information</a></h1>
 
-I have scanned the file before working on it for virus's etc and it's clean, but feel free to do it yourself. original creators link can be found below (if this is wrong let me know so I can update it!)
+I have scanned the file before working on it for virus's etc and it's clean, but feel free to do it yourself. original creators link can be found below (if this is wrong let me know so I can update it!) I take no credit for the creation of the original program, please give the proper credit to the original creator linked above! I have only added some, what i feel, are needed adjustments for making race days slightly easier with regards to changing your vehicles values.
 
 <h1 align="center">Features </a></h1>  
 
