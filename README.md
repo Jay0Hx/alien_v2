@@ -27,7 +27,6 @@ something
 
 <h1 align="center">Installation Guide</a></h1> 
 
-3. Install NPM packages
    ```sh
    npm install
    ``` 
