@@ -28,7 +28,7 @@ something
 <h1 align="center">Installation Guide</a></h1> 
 
    ```sh
-   1 > Download this repo (Make sure it's a release!)
+   1 > Download the latest release from my GitHub.
    ``` 
 
 <h1 align="center">How to use</a></h1> 
