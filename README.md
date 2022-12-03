@@ -55,4 +55,4 @@ solve_linear_sequence.py          |  Find linear sequences in a local 'pickle' d
 check_database.py                 |  Perform a number of checks on the data in a local pickle database.
 verify_oeis_catalog.py            |  Verify the catalog.
   
-  </p>
+</p>
