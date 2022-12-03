@@ -19,7 +19,10 @@ I have scanned the file before working on it for virus's etc and it's clean, but
 
 <h1 align="center">Features </a></h1>  
 
-+ something
+ TAB       |                      Feature Name                    | What it does
+-----------------|------------------------------------------------------|-----------------------------------------------------------------------------------
+ Power     |                    Engine Power           | Increse the engine power (Faster acceleration)
+ Power     |                    Breaking Power           | Adjusts the power of the breaks allowing you to stop faster!
 
 <h1 align="center">Changes that I made</a></h1>
 
@@ -39,10 +42,3 @@ something
    5 > remove main from the file name.
    And you are done!
    ``` 
-
-<h1 align="center">How to use</a></h1>    
-
- TAB       |                      Feature Name                    | What it does
------------------|------------------------------------------------------|-----------------------------------------------------------------------------------
- Power     |                    Engine Power           | Increse the engine power (Faster acceleration)
- Power     |                    Breaking Power           | Adjusts the power of the breaks allowing you to stop faster!
