@@ -6,8 +6,8 @@ I have scanned the file before working on it for virus's etc and it's clean, but
 ***Original Version***:
 >https://www.unknowncheats.me/forum/other-games/511184-assetto-corsa-alien-torque-grip-downforce.html
 
-<h1 align="center">Click me<a href="https://www.unknowncheats.me/forum/other-games/511184-assetto-corsa-alien-torque-grip-downforce.html" target="blank">
-JayOHx</a></h1>
+<h1 align="center"><a href="https://www.unknowncheats.me/forum/other-games/511184-assetto-corsa-alien-torque-grip-downforce.html" target="blank">
+Click Me</a></h1>
 
 ***Changes I have made***:
 >Changed the menu layouts. 
