@@ -29,6 +29,7 @@ something
 
    ```sh
    1 > Download the latest release from my GitHub.
+   2 > a
    ``` 
 
 <h1 align="center">How to use</a></h1> 
