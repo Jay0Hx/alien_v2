@@ -7,4 +7,5 @@ I have scanned the file before working on it for virus's etc and it's clean, but
 >Something here
 
 ***Changes I have made***:
->Something here
+>Changed the menu layouts
+>Changed the menu size slightly
