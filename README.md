@@ -30,9 +30,9 @@ something
    ```sh
    1 > Download the latest release from my GitHub.
    2 > Navigate to your asseto corsa install location!
-   3 > Click apps then lua
-   4 > drag alient_v2-main into the lua file
-   5 > remove main from the file name
+   3 > Click apps then lua.
+   4 > drag alient_v2-main into the lua file.
+   5 > remove main from the file name.
    And you are done!
    ``` 
 
