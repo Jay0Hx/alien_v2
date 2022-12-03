@@ -31,4 +31,4 @@ something
 
 <h1 align="center">Screenshots</a></h1>
 
-<img src="https://imgur.com/5OTQM6R" alt="Logo" width="80" height="80">
+<img src="https://imgur.com/5OTQM6R">
