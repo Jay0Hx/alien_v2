@@ -18,7 +18,6 @@ local function lapStringToMs(lapString)
     return timeComponents[3] + timeComponents[2] * 1000 + timeComponents[1] * 60 * 1000
 end
 
-
 local function getNextBlankId()
     curBlankId = curBlankId + 1
     return string.rep(" ", curBlankId)
@@ -30,15 +29,13 @@ ffi.cdef[[
     void lj_disablePitLimiter(bool active);
     void lj_overrideLapTime(int time);
     void lj_setGripMultiplier(float multiplier);
-    void lj_setNoclip(bool active);
+    double lj_setNoclip(bool active);
     double lj_getGearRatio(int gear);
     void lj_setGearRatio(int gear, double ratio);
     void lj_resetGearRatios();
 ]]
 
 local settings = {
-
-    
 
     handling = {
         optimalTireTemp = false,
@@ -74,146 +71,96 @@ local settings = {
         disablePitLimiter = false,
         disableDamage = false,
         noclip = false
-    }
+    },
 
+    jays_preMade = {
+        legit = false,
+        fast = false,
+        extreme = false,
+        lights_flash = false
+    }
 }
 
 local localCar;
 local ratiozera = alien2.lj_getGearRatio(1);
-
 local sound_nos_start = ac.AudioEvent.fromFile({ filename = cwd() .. "nos_engage.wav", use3D = true, loop = false }, true)
 local sound_nos_loop = ac.AudioEvent.fromFile({ filename = cwd() .. "nos_loop.wav", use3D = true, loop = true }, true)
 
 function script.windowMain(dt)
-
     ui.tabBar("main_tabs", function()
-
-        ui.tabItem("Power", function()
-
-            ui.text("Passive power")
-            local currentPassive, hasChangedPassive = ui.slider(getNextBlankId(), settings.power.passiveExtra, 0, 25, "%.1f m/s²")
+        ui.tabItem("Vehicle Setup", function()
+            ui.text("Power Configs")
+            local currentPassive, hasChangedPassive = ui.slider(getNextBlankId(), settings.power.passiveExtra, 0, 100, "%.1f - Power")
             if hasChangedPassive then
-                settings.power.passiveExtra = currentPassive
+                settings.power.passiveExtra = currentPassive               
             end
 
-            ui.text("Passive brake")
-            local currentBrake, hasChangedBrake = ui.slider(getNextBlankId(), settings.power.brake, 0, 50, "%.1f m/s²")
+            local currentBrake, hasChangedBrake = ui.slider(getNextBlankId(), settings.power.brake, 0, 100, "%.1f - Braking")
             if hasChangedBrake then
                 settings.power.brake = currentBrake
             end
           
-            ui.text("NoS power (Flash headlights)")
-            local currentNoS, hasChangedNoS = ui.slider(getNextBlankId(), settings.power.nos, 0, 50, "%.1f m/s²")
+            local currentNoS, hasChangedNoS = ui.slider(getNextBlankId(), settings.power.nos, 0, 100, "%.1f - NOS Power")
             if hasChangedNoS then
                 settings.power.nos = currentNoS
             end
 
-        end)
-
-        ui.tabItem("Handling", function()
-
-            if ui.checkbox("Optimal tire temperatures", settings.handling.optimalTireTemp) then
-                settings.handling.optimalTireTemp = not settings.handling.optimalTireTemp
-            end
-
-            ui.text("Grip multiplier")
-            local currentGrip, hasChangedGrip = ui.slider(getNextBlankId(), settings.handling.gripMultiplier, 0, 5, "%.2fx")
+            ui.text("Handling Configs")
+            local currentGrip, hasChangedGrip = ui.slider(getNextBlankId(), settings.handling.gripMultiplier, 0, 5, "%.2fx - Grip multiplier")
             if hasChangedGrip then
                 settings.handling.gripMultiplier = currentGrip
                 alien2.lj_setGripMultiplier(currentGrip)
             end
 
-            ui.text("Downforce add")
-            local currentDownforce, hasChangedDownforce = ui.slider(getNextBlankId(), settings.handling.downforceAdd, 0, 3000, "%.0fkg")
+            local currentDownforce, hasChangedDownforce = ui.slider(getNextBlankId(), settings.handling.downforceAdd, 0, 3000, "%.0fkg - Downforce add")
             if hasChangedDownforce then
-                settings.handling.downforceAdd = currentDownforce
+                settings.handling.downforceAdd = currentDownforce 
+            end
+
+            if ui.checkbox("Optimal tire temperatures", settings.handling.optimalTireTemp) then
+                settings.handling.optimalTireTemp = not settings.handling.optimalTireTemp
             end
 
         end)
 
         ui.tabItem("Drivetrain", function()
-
             for gear = 0, localCar.gearCount do
                 local gearName = gear == 0 and "R" or gear
                 settings.drivetrain.gearRatios[gear] = alien2.lj_getGearRatio(gear)
 
-                ui.text("Gear " .. gearName)
-                local currentGearRatio, hasChangedGearRatio = ui.slider(getNextBlankId(), settings.drivetrain.gearRatios[gear], -5, 8, "%.4f", 2)
+                local currentGearRatio, hasChangedGearRatio = ui.slider(getNextBlankId(), settings.drivetrain.gearRatios[gear], -5, 8, "%.4f - Gear: "..gearName, 2)
                 if hasChangedGearRatio then
 
                     alien2.lj_setGearRatio(gear, currentGearRatio)
-                end
-
+                end   
             end
-
             if ui.button("Reset") then
                 alien2.lj_resetGearRatios()
             end
-
         end)
 
         ui.tabItem("Auto-pilot", function()
-
-            if ui.checkbox("Enabled", settings.autopilot.enabled) then
-                settings.autopilot.enabled = not settings.autopilot.enabled
-                physics.setCarAutopilot(settings.autopilot.enabled)
-                
-            end
-
-            ui.text("Skill")
-            local currentSkill, hasChangedSkill = ui.slider(getNextBlankId(), settings.autopilot.skill, 0, 100, "%.0f%%")
+            
+            ui.text("Auto pilot settings")
+            local currentSkill, hasChangedSkill = ui.slider(getNextBlankId(), settings.autopilot.skill, 0, 100, "Skill - %.0f%% ")
             if hasChangedSkill then
                 settings.autopilot.skill = currentSkill
                 physics.setAILevel(0, currentSkill / 100)
             end
 
-            ui.text("Aggressiveness")
-            local currentAggressiveness, hasChangedAggressiveness = ui.slider(getNextBlankId(), settings.autopilot.aggressiveness, 0, 100, "%.0f%%")
+            local currentAggressiveness, hasChangedAggressiveness = ui.slider(getNextBlankId(), settings.autopilot.aggressiveness, 0, 100, "Aggressiveness - %.0f%%")
             if hasChangedAggressiveness then
                 settings.autopilot.aggressiveness = currentAggressiveness
                 physics.setAIAggression(0, currentAggressiveness / 100)
             end
 
+            if ui.checkbox("Enabled", settings.autopilot.enabled) then
+                settings.autopilot.enabled = not settings.autopilot.enabled
+                physics.setCarAutopilot(settings.autopilot.enabled)
+            end
         end)
 
-        ui.tabItem("Lap", function()
-            
-            if ui.checkbox("Freeze fuel amount", settings.lap.fuelFreeze >= 0) then
-                settings.lap.fuelFreeze = settings.lap.fuelFreeze > 0 and -1 or localCar.fuel
-                
-            end
-            
-            local hasEnabledOverride = false
-            if ui.checkbox("Override lap time", settings.lap.shouldOverride) then
-                settings.lap.shouldOverride = not settings.lap.shouldOverride
-
-                if settings.lap.shouldOverride then
-                    settings.lap.lapTimeString = ac.lapTimeToString(localCar.lapTimeMs)
-                    hasEnabledOverride = true
-                else
-                    alien2.lj_overrideLapTime(0)
-                end
-
-            end
-
-            if settings.lap.shouldOverride then
-                local currentTime, hasChangedTime = ui.inputText(" ", settings.lap.lapTimeString)
-                if hasChangedTime or hasEnabledOverride then
-                    settings.lap.lapTimeString = currentTime
-                    local overrideLapMs = lapStringToMs(currentTime)
-
-                    if overrideLapMs ~= nil then
-                        alien2.lj_overrideLapTime(overrideLapMs)
-                    end
-                end
-
-            end
-
-            ui.text("* Laps will never be invalid with Alien V2 running")
-        end)
-
-        ui.tabItem("Misc", function()
-          
+        ui.tabItem("Misc", function()      
             if ui.checkbox("Disable pit speed limiter", settings.misc.disablePitLimiter) then
                 settings.misc.disablePitLimiter = not settings.misc.disablePitLimiter
                 alien2.lj_disablePitLimiter(settings.misc.disablePitLimiter)
@@ -226,15 +173,167 @@ function script.windowMain(dt)
             if ui.checkbox("No collisions", settings.misc.noclip) then
                 settings.misc.noclip = not settings.misc.noclip
                 alien2.lj_setNoclip(settings.misc.noclip)
+                
+            end       
+            if ui.checkbox("Freeze fuel amount", settings.lap.fuelFreeze >= 0) then
+                settings.lap.fuelFreeze = settings.lap.fuelFreeze > 0 and -1 or localCar.fuel
+                
+            end        
+            local hasEnabledOverride = false
+            if ui.checkbox("Override lap time", settings.lap.shouldOverride) then
+                settings.lap.shouldOverride = not settings.lap.shouldOverride
+
+                if settings.lap.shouldOverride then
+                    settings.lap.lapTimeString = ac.lapTimeToString(localCar.lapTimeMs)
+                    hasEnabledOverride = true
+                else
+                    alien2.lj_overrideLapTime(0)
+                end
+
             end
-            
+            if settings.lap.shouldOverride then
+                local currentTime, hasChangedTime = ui.inputText(" ", settings.lap.lapTimeString)
+                if hasChangedTime or hasEnabledOverride then
+                    settings.lap.lapTimeString = currentTime
+                    local overrideLapMs = lapStringToMs(currentTime)
+
+                    if overrideLapMs ~= nil then
+                        alien2.lj_overrideLapTime(overrideLapMs)
+                    end
+                end
+
+            end
+            ui.text("* Laps will never be invalid with Alien V2 running")
         end)
 
-    end)
+        ui.tabItem("Mode", function()   
 
+            if ui.checkbox("Legit Mode", settings.jays_preMade.legit) then                                                   --------------LEGIT MODE------------
+                if settings.jays_preMade.fast then
+                    settings.jays_preMade.fast = not settings.jays_preMade.fast
+                end
+                if settings.jays_preMade.extreme then
+                    settings.jays_preMade.extreme = not settings.jays_preMade.extreme
+                end
+                settings.jays_preMade.legit = not settings.jays_preMade.legit
+                if not settings.handling.optimalTireTemp then
+                    settings.handling.optimalTireTemp = true
+                end
+                currentPassive = 0.0
+                currentBrake = 2.5
+                currentNoS = 0.9
+                currentDownforce = 26.0
+                currentGrip = 1.10
+                if getNextBlankId() ~= currentPassive then
+                    settings.power.passiveExtra = currentPassive
+                end
+                settings.power.brake = currentBrake
+                settings.power.nos = currentNoS
+
+                if getNextBlankId() ~= currentDownforce then
+                    settings.handling.downforceAdd = currentDownforce
+                end
+
+                if getNextBlankId() ~= currentGrip then
+                    settings.handling.gripMultiplier = currentGrip
+                    alien2.lj_setGripMultiplier(currentGrip)
+                end
+            end
+ 
+            if ui.checkbox("Fast", settings.jays_preMade.fast) then                                           ---------------------FAST MODE-------------------------------                                              
+                if settings.jays_preMade.legit then
+                    settings.jays_preMade.legit = not settings.jays_preMade.legit
+                end
+                if settings.jays_preMade.extreme then
+                    settings.jays_preMade.extreme = not settings.jays_preMade.extreme
+                end
+                settings.jays_preMade.fast = not settings.jays_preMade.fast
+                if not settings.handling.optimalTireTemp then
+                    settings.handling.optimalTireTemp = true
+                end
+                currentPassive = 1.5
+                currentBrake = 60.0
+                currentNoS = 10.0
+                currentDownforce = 26.0
+                currentGrip = 1.30 
+                if getNextBlankId() ~= currentPassive then
+                    settings.power.passiveExtra = currentPassive
+                end
+                settings.power.brake = currentBrake
+                settings.power.nos = currentNoS
+
+                if getNextBlankId() ~= currentDownforce then
+                    settings.handling.downforceAdd = currentDownforce
+                end
+
+                if getNextBlankId() ~= currentGrip then
+                    settings.handling.gripMultiplier = currentGrip
+                    alien2.lj_setGripMultiplier(currentGrip)
+                end
+            end
+
+            if ui.checkbox("Extreme (Obvious)", settings.jays_preMade.extreme) then                       ------------------------------EXTREME MODE------------------------------------               
+                if settings.jays_preMade.fast then
+                    settings.jays_preMade.fast = not settings.jays_preMade.fast
+                end
+                if settings.jays_preMade.legit then
+                    settings.jays_preMade.legit = not settings.jays_preMade.legit
+                end
+                settings.jays_preMade.extreme = not settings.jays_preMade.extreme
+                if not settings.handling.optimalTireTemp then
+                    settings.handling.optimalTireTemp = true
+                end
+                currentPassive = 200.0
+                currentBrake = 200.0
+                currentNoS = 100.0
+                currentDownforce = 8000.0
+                currentGrip = 9.00
+                if getNextBlankId() ~= currentPassive then
+                    settings.power.passiveExtra = currentPassive
+                end
+                settings.power.brake = currentBrake
+                settings.power.nos = currentNoS
+
+                if getNextBlankId() ~= currentDownforce then
+                    settings.handling.downforceAdd = currentDownforce
+                end
+
+                if getNextBlankId() ~= currentGrip then
+                    settings.handling.gripMultiplier = currentGrip
+                    alien2.lj_setGripMultiplier(currentGrip)
+                end
+            end
+
+            if ui.button("Reset to 0") then
+                if settings.jays_preMade.legit then
+                    settings.jays_preMade.legit = not settings.jays_preMade.legit
+                end
+                if settings.jays_preMade.extreme then
+                    settings.jays_preMade.extreme = not settings.jays_preMade.extreme
+                end
+                if settings.jays_preMade.legit then
+                    settings.jays_preMade.legit = not settings.jays_preMade.legit
+                end
+                if settings.jays_preMade.fast then
+                    settings.jays_preMade.fast = not settings.jays_preMade.fast
+                end
+                if settings.handling.optimalTireTemp then
+                    settings.handling.optimalTireTemp = false
+                end
+                alien2.lj_resetGearRatios()
+                settings.power.passiveExtra = 0
+                settings.power.brake = 0
+                settings.power.nos = 0
+                settings.handling.downforceAdd = 0
+                settings.handling.gripMultiplier = 0
+            end
+        end)
+    end)
 end
+                 
 
 function script.update(dt)
+
     localCar = ac.getCar(0)
 
     sound_nos_start:setPosition(localCar.position, nil, nil, localCar.velocity)
@@ -270,7 +369,7 @@ function script.update(dt)
     if settings.lap.fuelFreeze >= 0 then
         physics.setCarFuel(0, settings.lap.fuelFreeze)
     end
-
+    
     if localCar.flashingLightsActive and settings.power.nos > 0 and (localCar.gear > 0) then
         if settings.power.injectNosStart < 0 then
             settings.power.injectNosStart = ac.getSim().time
