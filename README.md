@@ -42,13 +42,13 @@ something
 
 <h1 align="center">How to use</a></h1>    
 
-Feature Name                          |  What it does
-----------------------------------|------------------------------------------------------------------------------------
-fetch_oeis_database.py            |  Fetch and refresh data from the remote OEIS database to a local sqlite3 database.
-show_database_time.py             |  Visualize time stamps in a given local sqlite3 OEIS database.
-parse_oeis_database.py            |  Parse a local sqlite3 database and produce a local pickle database.
-find_sequences.py                 |  Probe a local pickle database for a given sequence (work in progress).
-pickle_to_json.py                 |  Read a local pickle database and write a JSON version.
-solve_linear_sequence.py          |  Find linear sequences in a local 'pickle' database.
-check_database.py                 |  Perform a number of checks on the data in a local pickle database.
-verify_oeis_catalog.py            |  Verify the catalog.
+TAB | Feature Name                          |  What it does
+--------------|-----------------------------------|------------------------------------------------------------------------------------
+test|fetch_oeis_database.py            |  Fetch and refresh data from the remote OEIS database to a local sqlite3 database.
+test|show_database_time.py             |  Visualize time stamps in a given local sqlite3 OEIS database.
+test|parse_oeis_database.py            |  Parse a local sqlite3 database and produce a local pickle database.
+test|find_sequences.py                 |  Probe a local pickle database for a given sequence (work in progress).
+test|pickle_to_json.py                 |  Read a local pickle database and write a JSON version.
+test|solve_linear_sequence.py          |  Find linear sequences in a local 'pickle' database.
+test|check_database.py                 |  Perform a number of checks on the data in a local pickle database.
+test|verify_oeis_catalog.py            |  Verify the catalog.
