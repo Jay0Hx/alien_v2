@@ -41,6 +41,7 @@ something
    ``` 
 
 <h1 align="center">How to use</a></h1>    
+
 filename                          |  description
 ----------------------------------|------------------------------------------------------------------------------------
 fetch_oeis_database.py            |  Fetch and refresh data from the remote OEIS database to a local sqlite3 database.
