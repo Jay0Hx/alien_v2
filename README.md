@@ -27,7 +27,10 @@ something
 
 <h1 align="center">Installation Guide</a></h1> 
 
->1 Do something.  
+3. Install NPM packages
+   ```sh
+   npm install
+   ``` 
 
 <h1 align="center">How to use</a></h1> 
 
