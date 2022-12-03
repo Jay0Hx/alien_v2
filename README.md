@@ -28,7 +28,7 @@ I have scanned the file before working on it for virus's etc and it's clean, but
 
 something
 
->Added '*Quick Map*' options (what this does)  
+>Added '*Quick Map*' options (This is a new tab that introduces 'maps' with pre-defined vaules for power etc...)  
 >Changed the menu layouts.  
 >Changed the menu size slightly.  
 
