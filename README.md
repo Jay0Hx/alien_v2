@@ -42,6 +42,6 @@ something
 
 <h1 align="center">How to use</a></h1>    
 
-       TAB       |                      Feature Name                    | What it does
+ TAB       |                      Feature Name                    | What it does
 -----------------|------------------------------------------------------|-----------------------------------------------------------------------------------
-       Power     |                    Engine Power           | Increse the engine power (Faster acceleration)
+ Power     |                    Engine Power           | Increse the engine power (Faster acceleration)
