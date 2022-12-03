@@ -9,6 +9,8 @@ I have scanned the file before working on it for virus's etc and it's clean, but
 
 something
 
->Added '*Quick Map*' buttons (what this does)  
+>Added '*Quick Map*' options (what this does)  
 >Changed the menu layouts.  
 >Changed the menu size slightly.  
+
+<h1 align="center">How to use</a></h1> 
