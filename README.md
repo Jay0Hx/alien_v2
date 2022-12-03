@@ -45,3 +45,4 @@ something
  TAB       |                      Feature Name                    | What it does
 -----------------|------------------------------------------------------|-----------------------------------------------------------------------------------
  Power     |                    Engine Power           | Increse the engine power (Faster acceleration)
+ Power     |                    Breaking Power           | Adjusts the power of the breaks allowing you to stop faster!
