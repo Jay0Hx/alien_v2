@@ -39,3 +39,5 @@ something
 <h1 align="center">How to use</a></h1> 
 
 >1 Do something.  
+
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
