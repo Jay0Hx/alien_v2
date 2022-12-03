@@ -42,7 +42,7 @@ something
 
 <h1 align="center">How to use</a></h1>    
 
-filename                          |  description
+Feature Name                          |  What it does
 ----------------------------------|------------------------------------------------------------------------------------
 fetch_oeis_database.py            |  Fetch and refresh data from the remote OEIS database to a local sqlite3 database.
 show_database_time.py             |  Visualize time stamps in a given local sqlite3 OEIS database.
