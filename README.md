@@ -31,4 +31,4 @@ something
 
 <h1 align="center">Screenshots</a></h1>
 
-<img src="https://imgur.com/5OTQM6R">
+https://imgur.com/5OTQM6R"
