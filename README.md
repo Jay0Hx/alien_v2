@@ -9,7 +9,7 @@
   <p align="center">
     <a href="https://www.unknowncheats.me/forum/other-games/511184-assetto-corsa-alien-torque-grip-downforce.html">Original Release</a>
     ·
-    <a href="[https://github.com/othneildrew/Best-README-Template/issues](https://discord.gg/WHHsDjm73Y)">Support</a>
+    <a href="https://discord.gg/WHHsDjm73Y">Support</a>
   </p>
 </div>
 
