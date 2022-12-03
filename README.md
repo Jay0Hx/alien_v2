@@ -21,7 +21,7 @@ I have scanned the file before working on it for virus's etc and it's clean, but
 
  TAB       |                      Feature Name                    | What it does
 -----------------|------------------------------------------------------|-----------------------------------------------------------------------------------
- Power     |                    Engine Power           | Increse the engine power (Faster acceleration)
+ Power     |                    Engine Power           | :Increse the engine power (Faster acceleration):
  Power     |                    Breaking Power           | Adjusts the power of the breaks allowing you to stop faster!
 
 <h1 align="center">Changes that I made</a></h1>
