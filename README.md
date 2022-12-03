@@ -42,6 +42,8 @@ something
 
 <h1 align="center">How to use</a></h1>    
 
+<p align="center">
+
 filename                          |  description
 ----------------------------------|------------------------------------------------------------------------------------
 fetch_oeis_database.py            |  Fetch and refresh data from the remote OEIS database to a local sqlite3 database.
@@ -52,3 +54,5 @@ pickle_to_json.py                 |  Read a local pickle database and write a JS
 solve_linear_sequence.py          |  Find linear sequences in a local 'pickle' database.
 check_database.py                 |  Perform a number of checks on the data in a local pickle database.
 verify_oeis_catalog.py            |  Verify the catalog.
+  
+  </p>
