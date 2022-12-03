@@ -26,8 +26,6 @@ I have scanned the file before working on it for virus's etc and it's clean, but
 
 <h1 align="center">Changes that I made</a></h1>
 
-something
-
 + Added '*Quick Map*' options (This is a new tab that introduces 'maps' with pre-defined vaules for power etc...)  
 + I've compiled some things like power and handling under the same menu for easier use.   
 + I have added an 'Auto Win' feature, this will use the already excisting AI + my maps feature to automatically win the race.  
