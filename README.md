@@ -25,7 +25,7 @@ Please take note, I have only tested the pre-defined engine modes using F1 cars 
 
  ***TAB***       |                      ***Feature Name***                    | ***Options Availible!***
 :-----------------:|:------------------------------------------------------:|:-----------------------------------------------------------------------------------:
- Vehicle Setup     |                    [Pre-Made Power Maps]           | Select a pre-made map to race with!
+ Vehicle Setup     |                    [Pre-Made Power Maps]           | Select a pre-made map to race with! (Legit, Fast or Extreme).
 
 <h1 align="center">Changes that I made</a></h1>
 
