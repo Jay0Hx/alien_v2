@@ -40,6 +40,6 @@ Please take note, I have only tested the pre-defined engine modes using F1 cars 
    2 > Navigate to your asseto corsa install location!
    3 > Click apps then lua.
    4 > drag alient_v2-main into the lua file.
-   5 > remove main from the file name.
+   5 > remove main from the file name.  
    And you are done!
    ``` 
