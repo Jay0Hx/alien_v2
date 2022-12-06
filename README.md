@@ -42,4 +42,6 @@ Please take note, I have only tested the pre-defined engine modes using F1 cars 
    4 > drag alient_v2-main into the lua file.
    5 > remove main from the file name.  
    And you are done!
+   
+   To use this menu just go in game, hover your mouse over the right side of the screen to reveal the menu toggle panel and select 'Alien V2.1(1)'.
    ``` 
