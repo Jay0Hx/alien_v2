@@ -23,11 +23,9 @@ Please take note, I have only tested the pre-defined engine modes using F1 cars 
 
 <h1 align="center">Features </a></h1>  
 
- ***TAB***       |                      ***Feature Name***                    | ***What it does***
+ ***TAB***       |                      ***Feature Name***                    | ***Options Availible!***
 :-----------------:|:------------------------------------------------------:|:-----------------------------------------------------------------------------------:
- Power     |                    Engine Power           | Increse the engine power (Faster acceleration).
- Power     |                    Breaking Power           | Adjusts the power of the breaks allowing you to stop faster!
-  Power     |                    NOS           | Increase or decrese NOS (Mapped to flash lights).
+ Vehicle Setup     |                    [Pre-Made Power Maps]           | Select a pre-made map to race with!
 
 <h1 align="center">Changes that I made</a></h1>
 
