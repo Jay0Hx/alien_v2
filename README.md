@@ -23,8 +23,9 @@ Please take note, I have only tested the pre-defined engine modes using F1 cars 
 
  ***TAB***       |                      ***Feature Name***                    | ***What it does***
 :-----------------:|:------------------------------------------------------:|:-----------------------------------------------------------------------------------:
- Power     |                    Engine Power           | Increse the engine power (Faster acceleration)
+ Power     |                    Engine Power           | Increse the engine power (Faster acceleration).
  Power     |                    Breaking Power           | Adjusts the power of the breaks allowing you to stop faster!
+  Power     |                    NOS           | Increase or decrese NOS (Mapped to flash lights).
 
 <h1 align="center">Changes that I made</a></h1>
 
