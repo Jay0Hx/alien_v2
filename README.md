@@ -40,10 +40,9 @@ In here you can find other options such as lap time editing, fuel adjustments an
 
 <h1 align="center">Changes that I made</a></h1>
 
-+ Added '*Quick Map*' options (This is a new tab that introduces 'maps' with pre-defined vaules for power etc...)  
-+ I've compiled some things like power and handling under the same menu for easier use.   
-+ I have added an 'Auto Win' feature, this will use the already excisting AI + my maps feature to automatically win the race.  
-+ There is now a 'mapping' option for gear ratios, similar to my power mode selection but this is pre-defined gear ratios
++ Added '*Flash Map*' options (This is a new tab that introduces 'maps' with pre-defined vaules for power etc...)  
++ I've compiled some things like power and handling under the same menu for easier use.     
++ There is now a 'Drivers' tab that allows you to teleport to people around the track or spectate them!
 
 <h1 align="center">Installation Guide</a></h1> 
 
