@@ -27,6 +27,9 @@ Please take note, I have only tested the pre-defined engine modes using F1 cars 
 :-----------------:|:------------------------------------------------------:|:-----------------------------------------------------------------------------------:
  Vehicle Setup     |                    [Pre-Made Power Maps]           | Select a pre-made map to race with! (Legit, Fast or Extreme).
 
+***'Drivers' Menu.***
+This menu lists all the current connected drivers to your session, click on each name to view a list of options such as spectate and teleport! This feature will 100% get you banned from servers with active admins but as far as I know you will not recieve a game ban as it uses functions that are built into the game. The 'Drivers' tab will also give you information such as the drivers lap positions, location and what car they are driving.
+
 <h1 align="center">Changes that I made</a></h1>
 
 + Added '*Quick Map*' options (This is a new tab that introduces 'maps' with pre-defined vaules for power etc...)  
