@@ -23,6 +23,9 @@ Please take note, I have only tested the pre-defined engine modes using F1 cars 
 
 <h1 align="center">Features </a></h1>  
 
+***'Settings' Menu:***  
+This menu is mainly used from a development standpoint, i use it to hide certain features that are either un-tested, glitchy or not working. This menu also includes the ability to disable certain features that you might not use or want to see. For example, if you don't have any use for the 'Drivers' menu, you are able to hide it using the relevant option in the settings menu.
+
 ***'Flash Maps' Menu:***  
 In this section you will find a list of pre-made maps for both speed and drivetrain, these maps have been tested using F1 style cars and are known to be as close to perfect as I can make. The auto-pilot feature will work with these flash maps meaning if you want to quickly catch up in a race, enable your desired flash map then enable auto-pilot. Gearbox maps override any current data you have on your manual gearbox tune.
 
