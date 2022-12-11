@@ -23,9 +23,8 @@ Please take note, I have only tested the pre-defined engine modes using F1 cars 
 
 <h1 align="center">Features </a></h1>  
 
- ***TAB***       |                      ***Feature Name***                    | ***Options Availible!***
-:-----------------:|:------------------------------------------------------:|:-----------------------------------------------------------------------------------:
- Vehicle Setup     |                    [Pre-Made Power Maps]           | Select a pre-made map to race with! (Legit, Fast or Extreme).
+***'Flash Maps' Menu:***  
+In this section you will find a list of pre-made maps for both speed and drivetrain, these maps have been tested using F1 style cars and are known to be as close to perfect as I can make. The auto-pilot feature will work with these flash maps meaning if you want to quickly catch up in a race, enable your desired flash map then enable auto-pilot. Gearbox maps override any current data you have on your manual gearbox tune.
 
 ***'Manual Tuning' Menu:***  
 In this tab you will see options on manually tuning your vehicle in real time, please note that the 'Flash Map' options will override any options that you chose in the 'Manual Tuning' menu. There is a reset button included in each sub-section to automatically reset each section to the default should you wish too.
