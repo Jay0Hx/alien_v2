@@ -17,7 +17,7 @@
 
 ***NOTE:*** I am working on making this read-me acuratly represent the menu, the menu is not completed yet so some features listed are not present.
 
-I have scanned the file before working on it for virus's etc and it's clean, but feel free to do it yourself. original creators link can be found below (if this is wrong let me know so I can update it!) I take no credit for the creation of the original program, please give the proper credit to the original creator linked above! I have only added some, what i feel, are needed adjustments for making race days slightly easier with regards to changing your vehicles values.  
+I have scanned the file before working on it for virus's etc and it's clean, but feel free to do it yourself. I use this software personally and have a few friends that do also and we have not had any issues. The original creators link can be found above (if this is wrong let me know so I can update it!) I take no credit for the creation of the original program, please give the proper credit to the original creator linked above! I have only added some, what i feel, are needed adjustments for making race days slightly easier with regards to changing your vehicles values. 
 
 Please take note, I have only tested the pre-defined engine modes using F1 cars because that is mainly what I play with! Let me know how you get on using my version of AlienV2 with differnt cars, I would appreciate any feedback on options that you would like to see added!
 
